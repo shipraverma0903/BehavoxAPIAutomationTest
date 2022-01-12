@@ -1,26 +1,22 @@
 package com.behavox.api.automation;
 
-import io.restassured.RestAssured;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-
-import java.util.Random;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 
 public class APIGuaranteeTest extends BaseTest{
 
 
     @BeforeClass
     public void setBaseProperties() {
-        //setBasicProperties();
+        setBasicProperties();
     }
 
     @Test
     public void APIGuranteeTest() {
-    	RestAssured.baseURI = "http://localhost:8080/groovy/";
         String groovyScript = String.format("%s+%s",241.0, Math.random());
         RequestSpecification user_1Request = getRequest("user_2","pass_2");
         executeSubmitReq(user_1Request, groovyScript);
@@ -33,8 +29,5 @@ public class APIGuaranteeTest extends BaseTest{
 
     }
     
-    public static void main(String[] args) {
-		Random r = new Random();
-		System.out.println(r.nextInt(5000, 6000));
-	}
+ 
 }
