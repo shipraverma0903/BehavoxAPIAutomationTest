@@ -1,5 +1,6 @@
 package com.behavox.api.automation;
 
+import org.apache.log4j.Logger;
 import org.testng.ITestResult;
 
 import com.behavox.api.automation.response.domain.SubmitRequest;
@@ -16,6 +17,7 @@ import io.restassured.specification.RequestSpecification;
  *
  */
 public class BaseTest {
+	
 
 	private Gson gson;
 
@@ -62,16 +64,18 @@ public class BaseTest {
 
 
 	public void printTestResults(ITestResult result) {
+
+		Logger logger = Logger.getLogger(getClass());
 		try {
 			if (result.getStatus() == ITestResult.SUCCESS) {
-				System.out.println(result.getMethod().getMethodName() + " **********Passed **********");
+				logger.info(result.getMethod().getMethodName() + " **********Passed **********");
 			} else if (result.getStatus() == ITestResult.FAILURE) {
-				System.out.println(result.getMethod().getMethodName() + " **********Failed ***********");
+				logger.info(result.getMethod().getMethodName() + " **********Failed ***********");
 			} else if (result.getStatus() == ITestResult.SKIP) {
-				System.out.println(result.getMethod().getMethodName() + " **********Skiped***********");
+				logger.info(result.getMethod().getMethodName() + " **********Skiped***********");
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Could not run test", e);
 		}
 
 	}
