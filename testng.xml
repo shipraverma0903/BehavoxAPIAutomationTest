@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+
+		<classes>
+			<class name="com.behavox.api.automation.Submit_APITest" />
+			<class name="com.behavox.api.automation.Status_APITest" />
+			<class name="com.behavox.api.automation.APISecurityTest" />
+			<class name="com.behavox.api.automation.APIRobustenessTest" />
+			<class name="com.behavox.api.automation.APIGuaranteeTest" />
+			<class name="com.behavox.api.automation.APIParallelExecutionTest" />
+			<class name="com.behavox.api.automation.APIResponse_Queue_ValidationTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
