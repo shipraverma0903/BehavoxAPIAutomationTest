@@ -6,6 +6,7 @@
 		<classes>
 			<class name="com.behavox.api.automation.Submit_APITest" />
 			<class name="com.behavox.api.automation.Status_APITest" />
+			<class name="com.behavox.api.automation.Status_API_IDModificationTest" />
 			<class name="com.behavox.api.automation.APISecurityTest" />
 			<class name="com.behavox.api.automation.APIRobustenessTest" />
 			<class name="com.behavox.api.automation.APIGuaranteeTest" />
