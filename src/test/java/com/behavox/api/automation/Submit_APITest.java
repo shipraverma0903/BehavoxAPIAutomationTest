@@ -41,10 +41,10 @@ public class Submit_APITest extends BaseTest {
 	 * input
 	 *
 	 */
-	// @Test
+	@Test
 	public void SubmitEPStringTest_Success() {
 
-		String groovyScript = "'a'+'b'";
+		String groovyScript = "'a+"+Math.random()+"'";
 		RequestSpecification httpRequest = getRequest("user_1", "pass_1");
 		Response submitResponse = executeSubmitReq(httpRequest, groovyScript);
 		SubmitEPResponse submitEPResponse = getGson().fromJson(submitResponse.asString(), SubmitEPResponse.class);
